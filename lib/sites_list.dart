@@ -1,20 +1,26 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:sentinelapp/add_site.dart';
 import 'package:sentinelapp/icons/my_flutter_app_icons.dart';
+import 'package:sentinelapp/site_detail.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 import 'sites_list1.dart';
 
 class SitesList extends StatelessWidget {
-  const SitesList({Key? key}) : super(key: key);
+  final GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey<ScaffoldState>();
+  SitesList({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      key: _scaffoldKey,
       drawer: SitesList1(),
       appBar: AppBar(
         leading: IconButton(
-          icon: Icon(Icons.menu, color: Color(0xffF7F8FA),),          onPressed: (){},
+          icon: Image.asset('assets/img/ic_menu.png'),
+          onPressed: () => _scaffoldKey.currentState!.openDrawer()
         ),
         backgroundColor: Color(0xffF7F8FA),
         title: Center(child: Text('My Sites', style: TextStyle(color: Color(0xff000000),fontSize: 17, fontWeight: FontWeight.bold),)),
@@ -26,7 +32,9 @@ class SitesList extends StatelessWidget {
             child: Center(
               child: InkWell(
                 child: Text('Add Site', style: TextStyle(color: Colors.red, fontSize: 17),),
-                onTap: (){},
+                onTap: (){
+                  Navigator.push(context, MaterialPageRoute(builder: (context){return AddSite();}));
+                },
               ),
             ),
           )
@@ -157,64 +165,71 @@ class SitesList extends StatelessWidget {
                   ],
                 ),
               ),
-              Container(
-                width: 390,
-                height: 90,
-                margin: EdgeInsets.only(left: 15, right: 15),
-                child: Column(
-                  children: [
-                    Row(
-                      children: [
-                        Container(
-                          width: 66,
-                          height: 66,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(6),
-                            image:const DecorationImage(
-                              image: AssetImage('assets/img/conheo.png'),
-                              fit: BoxFit.cover
-                            )
+              InkWell(
+                onTap: (){
+                  Navigator.of(context).push(
+                    MaterialPageRoute(builder: (context) => SiteDetail())
+                  );
+                },
+                child: Container(
+                  width: 390,
+                  height: 90,
+                  margin: EdgeInsets.only(left: 15, right: 15),
+                  child: Column(
+                    children: [
+                      Row(
+                        children: [
+                          Container(
+                            width: 66,
+                            height: 66,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(6),
+                              image:const DecorationImage(
+                                image: AssetImage('assets/img/conheo.png'),
+                                fit: BoxFit.cover
+                              )
+                            ),
                           ),
-                        ),
-                        const SizedBox(width: 10.5,),
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            const SizedBox(height: 10,),
-                            const Text('ROBINSON SITE',style: TextStyle(fontSize: 17, fontWeight: FontWeight.bold),),
-                            const Text('Updated: SAT, JUN 15 7:30 PM', style: TextStyle(fontSize: 13, color: Color(0xffACB1C0)),),
-                          const  SizedBox(height: 14.5,),
-                            RichText(text: const TextSpan(
-                              text: 'COUNT ',
-                              style: TextStyle(
-                                color: Colors.black,
-                                fontSize: 12,
-                                fontWeight: FontWeight.bold
-                              ),
-                              children: [
-                                TextSpan(
-                                  text: '  1,493',
-                                  style: TextStyle(
-                                    color: Color(0xff007AFF),
-                                    fontSize: 12,
-                                    fontWeight: FontWeight.bold
+                          const SizedBox(width: 10.5,),
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              const SizedBox(height: 10,),
+                              const Text('ROBINSON SITE',style: TextStyle(fontSize: 17, fontWeight: FontWeight.bold),),
+                              const Text('Updated: SAT, JUN 15 7:30 PM', style: TextStyle(fontSize: 13, color: Color(0xffACB1C0)),),
+                            const  SizedBox(height: 14.5,),
+                              RichText(text: const TextSpan(
+                                text: 'COUNT ',
+                                style: TextStyle(
+                                  color: Colors.black,
+                                  fontSize: 12,
+                                  fontWeight: FontWeight.bold
+                                ),
+                                children: [
+                                  TextSpan(
+                                    text: '  1,493',
+                                    style: TextStyle(
+                                      color: Color(0xff007AFF),
+                                      fontSize: 12,
+                                      fontWeight: FontWeight.bold
+                                    )
                                   )
-                                )
-                              ]
-                            ),
-                            
-                            ),
-                          ],
-                        ),
-                        const SizedBox(width: 77,),
-                        Icon(MyFlutterApp.chevron_right, size: 50,color: Color(0xffACB1C0),)
-                      ],
-                    ),
-                    Expanded(child: Divider(
-                      color: Color(0xffACB1C0),
-                      height: 17,
-                    ))
-                  ],
+                                ]
+                              ),
+                              
+                              ),
+                            ],
+                          ),
+                          const SizedBox(width: 77,),
+                          Icon(MyFlutterApp.chevron_right, size: 50,color: Color(0xffACB1C0),)
+                        ],
+                      ),
+                      Expanded(child: Divider(
+                        color: Color(0xffACB1C0),
+                        height: 17,
+                      ))
+                    ],
+                  ),
                 ),
               ),
               Container(

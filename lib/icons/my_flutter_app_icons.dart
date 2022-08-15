@@ -26,4 +26,6 @@ class MyFlutterApp {
   static const String? _kFontPkg = null;
 
   static const IconData chevron_right = IconData(0xe800, fontFamily: _kFontFam, fontPackage: _kFontPkg);
+  static const IconData more_vert = IconData(0xe802, fontFamily: _kFontFam, fontPackage: _kFontPkg);
+  static const IconData chevron_left = IconData(0xe800, fontFamily: _kFontFam, fontPackage: _kFontPkg);
 }

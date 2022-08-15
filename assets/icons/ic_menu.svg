@@ -1,0 +1,9 @@
+<svg id="ic_menu" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="24" viewBox="0 0 24 24">
+  <defs>
+    <clipPath id="clip-path">
+      <path id="Filters" d="M1.286,13.714a1.286,1.286,0,1,1,0-2.571H15.857a1.286,1.286,0,1,1,0,2.571ZM1.211,8.068a1.21,1.21,0,1,1,0-2.42H9.076a1.21,1.21,0,1,1,0,2.42Zm.113-5.5A1.286,1.286,0,0,1,1.323,0h12.82a1.286,1.286,0,1,1,0,2.571Z"/>
+    </clipPath>
+  </defs>
+  <rect id="Icons_Filled_Menu_background" data-name="Icons / Filled / Menu background" width="24" height="24" fill="rgba(0,0,0,0)"/>
+  <path id="Filters-2" data-name="Filters" d="M1.286,13.714a1.286,1.286,0,1,1,0-2.571H15.857a1.286,1.286,0,1,1,0,2.571ZM1.211,8.068a1.21,1.21,0,1,1,0-2.42H9.076a1.21,1.21,0,1,1,0,2.42Zm.113-5.5A1.286,1.286,0,0,1,1.323,0h12.82a1.286,1.286,0,1,1,0,2.571Z" transform="translate(3.429 5.143)"/>
+</svg>

@@ -2,13 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
 
+import 'sites_list.dart';
+
 class LoginPage extends StatelessWidget {
   const LoginPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     double w = MediaQuery.of(context).size.width;
-    double h = MediaQuery.of(context).size.height;
     return Scaffold(
       backgroundColor: Color.fromRGBO(0, 32, 87, 1),
       body: SingleChildScrollView(
@@ -110,16 +111,24 @@ class LoginPage extends StatelessWidget {
                       ),
                     ),
                     SizedBox(height: 40,),
-                    Container(
-                      width: 275,
-                      height: 44,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(6),
-                        color: Color(0xFF007AFF)
+                    GestureDetector(
+                      onTap: (){
+                        Navigator.push(context, MaterialPageRoute(builder: 
+                        (context) {
+                          return SitesList();
+                        }));
+                      },
+                      child: Container(
+                        width: 275,
+                        height: 44,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(6),
+                          color: Color(0xFF007AFF)
+                        ),
+                        child: Center(child: Text('Sign In',
+                        style: TextStyle(color: Colors.white,
+                        fontSize: 14, fontWeight: FontWeight.bold),)),
                       ),
-                      child: Center(child: Text('Sign In',
-                      style: TextStyle(color: Colors.white,
-                      fontSize: 14, fontWeight: FontWeight.bold),)),
                     ),
                     SizedBox(height: 46,),
                     Center(

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:sentinelapp/login.dart';
 
+import 'add_site.dart';
+import 'setup_barns.dart';
 import 'site_detail.dart';
 import 'sites_list.dart';
 
@@ -20,7 +22,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       debugShowCheckedModeBanner: false,
-      home: SitesList(),
+      home: LoginPage(),
     );
   }
 }
