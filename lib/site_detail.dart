@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
@@ -11,37 +13,13 @@ class SiteDetail extends StatelessWidget {
   Widget build(BuildContext context) {
 
     return Scaffold(
-      extendBodyBehindAppBar: true,
-      
-      appBar: AppBar(
-        elevation: 0,
-        backgroundColor: Colors.transparent,
-        actions: [
-          Container(
-            margin: EdgeInsets.only(right: 15),
-            child: Icon(MyFlutterApp.more_vert, color: Colors.white,))
-        ],
-      ),
-      // body: NestedScrollView(
-      //   floatHeaderSlivers: true,
-      //   headerSliverBuilder: ((context, innerBoxIsScrolled) => [
-      //     SliverAppBar(
-      //       floating: true,
-      //     elevation: 0,
-      //    backgroundColor: Colors.transparent,
-      //    actions: [
-      //     Container(
-      //       margin: EdgeInsets.only(right: 15),
-      //       child: Icon(MyFlutterApp.more_vert, color: Colors.white,))
-      //   ],
-      //     )
-      //   ]),
         body: SingleChildScrollView(
           child: Column(
             children: [
               Container(
                 child: Stack(
                   children: [
+                    
                     Container(
                       width: double.infinity,
                       height: 289,
@@ -51,17 +29,29 @@ class SiteDetail extends StatelessWidget {
                           fit: BoxFit.cover
                         )
                       ),
-                      child: Padding(
-                        padding: EdgeInsets.symmetric(horizontal: 20),
+                      child: Container(
+                        decoration: BoxDecoration(color: Colors.black.withOpacity(0.4)),
+                      ),
+                    ),
+                    AppBar(
+                      elevation: 0,
+                      backgroundColor: Colors.transparent,
+                      actions: [
+                        Container(
+                          child: Image.asset('assets/img/Icons - Filled - Menu Copy.png', color: Colors.white,),
+                        )
+                      ],
+                    ),
+                    Padding(
+                        padding:const EdgeInsets.symmetric(horizontal: 20),
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.start,
                           crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
+                          children: const[
                             SizedBox(height: 160,),
-                            Container(
+                            
+                             Text('Robinson Site', style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: Colors.white),),
                               
-                              child: Text('Robinson Site', style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: Colors.white),)
-                              ),
                             SizedBox(height: 1,),
                             Text('Updated: Mar 14, 2020 9:51 PM', style: TextStyle(fontSize: 13, color: Colors.white),),
                             SizedBox(height: 33,),
@@ -70,7 +60,6 @@ class SiteDetail extends StatelessWidget {
                           ],
                         ),
                       ),
-                    )
                   ],
                 ),
               ),
